@@ -1,0 +1,43 @@
+.message_wrapper {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 1.1rem 1.5rem;
+    width: fit-content;
+  }
+  
+  .message_wrapper[author='chatbot']{
+    background-color: transparent;
+  }  
+  .icon {
+    margin-right: 2rem;
+  }
+  
+  .message_text {
+    word-wrap: break-word;
+    font-size: 16px;
+    text-align:justify;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+  }
+  .message_text pre{
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;       /* CSS стандарт */
+    white-space: -moz-pre-wrap;  /* Firefox */
+    white-space: -pre-wrap;      /* Opera <7 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* IE */
+
+  }
+  .file_link{
+    text-decoration: none;
+    color: inherit;
+    text-align: justify;
+    cursor: pointer;
+  }
+  .file_link:hover{
+    color: aquamarine;
+  }

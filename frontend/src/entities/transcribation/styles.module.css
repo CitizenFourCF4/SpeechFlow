@@ -1,0 +1,38 @@
+.audio_row{
+  display:flex;
+  margin-bottom:10px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.audio_row_active{
+  background-color: #303f46;
+  padding: .2rem;
+}
+
+.formatTime{
+  color:#7ba7ba;
+  margin-right:20px;
+  width:80px; 
+  background-color:#3b5c67;
+  border-radius: 5px;
+  padding: 4px;
+  text-align: center;
+}
+
+.input_wrapper{
+  width: 100%;
+  margin-right: 2rem;
+}
+
+.input{
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.input:focus{
+  outline: 1px solid orange;
+}

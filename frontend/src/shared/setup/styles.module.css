@@ -1,0 +1,8 @@
+.setup_wrapper{
+    position: absolute;
+    right:4rem;
+}
+
+.setup_wrapper:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,27 @@
+.chatbox{
+    flex: 1;
+    position: relative;
+    max-width: 60%;
+}
+
+.chat_messages_holder{
+    padding: 30px;
+    left: 0;
+    right: 0;
+    height: 75%;
+    display: flex;
+    overflow-y: auto;
+    max-height: 75%;
+    margin-top: 2rem;
+  }
+
+.chat_input_holder{
+    padding: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+  }

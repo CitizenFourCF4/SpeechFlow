@@ -1,0 +1,27 @@
+.lead_string{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.buttons{
+  position: absolute;
+  left: 50%;  
+  transform: translateX(-50%);
+}
+
+.special_modal .modal-content{
+  background-color: #000;
+}
+
+.export_container{
+  padding: .4rem .8rem;
+  background-color: #000;
+  color: white;
+  font-size: 14px;
+  margin-left: auto;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}

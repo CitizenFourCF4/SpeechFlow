@@ -1,0 +1,17 @@
+.avatar[author='chatbot'] {
+    background-color: inherit;
+  }
+  
+  .user_avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: orange;
+  }
+  
+  .logo {
+    width: 2.5rem;
+    border-radius: 50%;
+  }

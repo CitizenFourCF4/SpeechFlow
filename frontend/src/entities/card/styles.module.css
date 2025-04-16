@@ -1,0 +1,39 @@
+.card{
+    height: 14rem;
+    width: 14rem;
+    padding: 15px;
+    background-color: #e0d2e2;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    color: #212121;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 18px;
+    box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.6);
+    transition: all 0.7s ease;
+}
+
+.card:hover{
+    transform: scale(1.01);
+    border-radius: 10px;
+    border: 2px orange solid;
+  }
+
+.image{
+    padding: 8px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 20px;
+    bottom: 10px;
+    right: 10px;
+    align-items: center;
+    display: flex;
+}
+  
+.ai_wrapper span {
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

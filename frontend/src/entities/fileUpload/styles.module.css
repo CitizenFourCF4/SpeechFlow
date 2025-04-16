@@ -1,0 +1,8 @@
+.container{
+  border: 2px dashed #0070f3;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: .24s ease-in-out;
+}

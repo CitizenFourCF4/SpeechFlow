@@ -1,0 +1,20 @@
+.container{
+    flex: 1;
+    position: relative;
+    height: 100%;
+    max-width: 50%;
+    border: 1px solid #000; /* Для наглядности */
+}
+
+.header{
+    margin-top: 3rem;
+}
+
+.text_wrapper{
+    font-size: 22px;
+    font-stretch: extra-expanded;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 4rem;
+}

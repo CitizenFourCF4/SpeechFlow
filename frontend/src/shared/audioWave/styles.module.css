@@ -1,0 +1,44 @@
+.lead_string{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.lead_buttons{
+  position: absolute;
+  left: 50%;  
+  transform: translateX(-50%);
+}
+
+
+.formatTime{
+  color:#7ba7ba;
+  margin-right:20px;
+  width:80px; 
+  background-color:#3b5c67;
+  border-radius: 5px;
+  padding: 4px;
+  text-align: center;
+}
+
+.audio_row{
+  display:flex;
+  margin-bottom:10px;
+  cursor: pointer;
+}
+
+.special_modal .modal-content{
+  background-color: #000;
+}
+
+.export_container{
+  padding: .4rem .8rem;
+  background-color: #000;
+  color: white;
+  font-size: 14px;
+  margin-left: auto;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}

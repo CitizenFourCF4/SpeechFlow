@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.file_selector{
+  margin-bottom: 4rem;
+}
+
+.send_button{
+  margin-top: 4rem;
+}
