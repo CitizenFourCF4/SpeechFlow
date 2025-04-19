@@ -12,7 +12,7 @@ const WavesurferProvider = ({children}) => {
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
     container: containerRef,
     width:780,
-    height: 90,
+    height: 70,
     waveColor: '#999999',
     progressColor: '#494949',
     url: audioUrl,

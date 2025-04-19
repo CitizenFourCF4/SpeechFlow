@@ -52,9 +52,9 @@ def uploaded_file(filename):
 
 @app.route("/send_message", methods=["POST"])
 def send_message():
-    data:dict = request.get_json()
+    data: dict = request.get_json()
     transcription_chunks = data.get('transcriptions', [])
-    chatbot_answer = reply_to_user(data['message'], transcription_chunks)
+    chatbot_answer = reply_to_user(data['message'], data['isIncludeTranscription'], transcription_chunks)
     return make_response(
         jsonify({
             "message": chatbot_answer,

@@ -2,6 +2,8 @@ import React from 'react'
 import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectIsActiveIncludeTranscriptionToggle, setIsActiveIncludeTranscriptionToggle } from 'src/app/store/slices/chatSlice';
 
 const IOSSwitch = styled((props) => (
     <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -64,9 +66,17 @@ const IOSSwitch = styled((props) => (
   }));
 
 const SwitchElem = () => {
+  const isToggleAcive = useSelector(selectIsActiveIncludeTranscriptionToggle)
+  const dispatch = useDispatch()
+  const handleToggleChange = (event) => {
+    dispatch(setIsActiveIncludeTranscriptionToggle(event.target.checked))
+  };
+
   return (
     <FormControlLabel
-        control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+      control={<IOSSwitch sx={{ m: 1 }}/>}
+      onChange={handleToggleChange}
+      checked={isToggleAcive}
     />
   )
 }

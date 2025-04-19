@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { sendAudio } from 'src/app/store/slices/waveSurferSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import {  selectIsLoading, setSelectedFile, selectSelectedFile } from 'src/app/store/slices/waveSurferSlice'
+import {  sendAudio, selectIsLoading, setSelectedFile, selectSelectedFile } from 'src/app/store/slices/waveSurferSlice'
 import "./app.css";
 
 const FileUploadNew = () => {
@@ -16,7 +15,6 @@ const FileUploadNew = () => {
     e.preventDefault();
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0]
-      console.log(file)
       dispatch(setSelectedFile(file))
     }
   };

@@ -14,16 +14,17 @@ const ChatContainer = () => {
   
 
   return (
-    <section className={styles.chatbox} >
-      <div className={styles.chat_messages_holder}>
-        <ChatMessages />
+    <section className={styles.chatbox}>
+      <div className={styles.paper}>
+        <div className={styles.chat_messages_holder}>
+          <ChatMessages />
+        </div>
+        <div className={styles.chat_input_holder}>
+          <TextInputForm />
+          <SetupElement />
+        </div>
+        <ChatModal show={isShowChatSetupModal} onHide={handleModalClose}/>
       </div>
-      <div className={styles.chat_input_holder}>
-        {/* <SwitchElem /> */}
-        <TextInputForm />
-        <SetupElement />
-      </div>
-      <ChatModal show={isShowChatSetupModal} onHide={handleModalClose}/>
     </section>
   )
 }

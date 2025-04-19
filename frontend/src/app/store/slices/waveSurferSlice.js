@@ -9,9 +9,9 @@ export const sendAudio = createAsyncThunk(
       const data = new FormData();
       data.append('media', selectedFile)
       const response = await axios.post(media_upload_url, data);
-      dispatch(setTranscribation(response.data.asr_model_output))
+      dispatch(setTranscriptions(response.data.asr_model_output))
       dispatch(setAudioUrl(response.data.audio_url))
-      dispatch(setIsShowWhisperModal(true))
+      dispatch(setIsShowOfflineWidget(true))
       
     } catch (error) {
         return rejectWithValue(error.response);
@@ -21,8 +21,8 @@ export const sendAudio = createAsyncThunk(
 
 const initialState = {
   audioUrl: '',
-  transcribation: [],
-  isShowWhisperModal: false,
+  transcriptions: [],
+  isShowOfflineWidget: false,
   isLoading: false,
   selectedFile: null,
 };
@@ -34,11 +34,11 @@ const waveSurferSlice = createSlice({
     setAudioUrl: (state, action) => {
       state.audioUrl = action.payload;
     },
-    setTranscribation: (state, action) => {
-      state.transcribation = action.payload;
+    setTranscriptions: (state, action) => {
+      state.transcriptions = action.payload;
     },
-    setIsShowWhisperModal: (state, action) => {
-      state.isShowWhisperModal = action.payload;
+    setIsShowOfflineWidget: (state, action) => {
+      state.isShowOfflineWidget = action.payload;
     },
     setIsLoading: (state, action) => {
       state.isLoading = action.payload;
@@ -47,13 +47,16 @@ const waveSurferSlice = createSlice({
       state.selectedFile = action.payload;
     },
     closeWhisperModal: (state) => {
-      state.isShowWhisperModal = false
-    }
+      state.isShowOfflineWidget = false
+    }, 
+    addTranscription: (state, action) => {
+      state.transcriptions = [...state.transcriptions, action.payload]
+    },
   },
   selectors: {
     selectAudioUrl: (state) => state.audioUrl,
-    selectTranscribation: (state) => state.transcribation,
-    selectIsShowWhisperModal: (state) => state.isShowWhisperModal,
+    selectTranscribation: (state) => state.transcriptions,
+    selectIsShowOfflineWidget: (state) => state.isShowOfflineWidget,
     selectIsLoading: (state) => state.isLoading,
     selectSelectedFile: (state) => state.selectedFile
   },
@@ -75,6 +78,6 @@ const waveSurferSlice = createSlice({
   }
 });
 
-export const { setAudioUrl, setTranscribation, setIsShowWhisperModal, setIsLoading, closeWhisperModal, setSelectedFile } = waveSurferSlice.actions;
-export const { selectAudioUrl, selectTranscribation, selectIsShowWhisperModal, selectIsLoading, selectSelectedFile } = waveSurferSlice.selectors;
+export const { setAudioUrl, setTranscriptions, setIsShowOfflineWidget, setIsLoading, closeWhisperModal, setSelectedFile, addTranscription } = waveSurferSlice.actions;
+export const { selectAudioUrl, selectTranscribation, selectIsShowOfflineWidget, selectIsLoading, selectSelectedFile } = waveSurferSlice.selectors;
 export const waveSurferReducer = waveSurferSlice.reducer;

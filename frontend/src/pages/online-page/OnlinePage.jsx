@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { io } from 'socket.io-client';
 import styles from './styles.module.css'
 import ChatContainer from 'src/widgets/chat-container/ChatContainer';
 import Transcribation from 'src/widgets/transcribation/Transcribation';
 import { useDispatch } from 'react-redux';
-import { addTranscription } from 'src/app/store/slices/chatSlice';
+import { addTranscription } from 'src/app/store/slices/waveSurferSlice';
 
 
 const URL = 'http://localhost:8001'
@@ -38,8 +38,10 @@ const OnlinePage = () => {
 
   return (
     <div className={styles.container}>
-      <Transcribation />
-      <ChatContainer />
+        <div className={styles.wrapper}>
+          <Transcribation />
+          <ChatContainer />
+      </div>
     </div>
   )
 }

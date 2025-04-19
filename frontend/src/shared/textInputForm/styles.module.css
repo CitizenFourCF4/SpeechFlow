@@ -7,8 +7,9 @@
   border-width: 10px;
   border-radius: 1rem;
   transition: transform 0.2s;
-  box-shadow: 0 0 4px 0 rgba(14, 13, 13, 0.966);
-  border-color: hsla(0, 21%, 10%, 0.15);
+  color: white;
+  box-shadow: 0 0 4px 0 rgba(239, 239, 239, 0.25);
+  border-color: hsla(0,0%,100%,.15);
 }
   
 .chat_input_wrapper:focus-within{
@@ -23,7 +24,7 @@
     border: none;
     outline: none;
     margin-right: 30px;
-    color: black;
+    color: rgb(255, 255, 255);
   }  
   
   .chat_input_button{

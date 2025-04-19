@@ -1,0 +1,43 @@
+.container{
+  flex: 1;
+  position: relative;
+  height: 100%;
+  max-width: 50%;
+}
+
+.wrapper{
+  width: 95%;
+  height: 99%;
+  border-radius: 10px;
+  /* border: 1px solid hsla(219, 20%, 25%, 1);
+  box-shadow: hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px; */
+  display: flex;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  /* background-image: radial-gradient(rgba(0, 41, 82, 0.5), rgb(9, 11, 17)); */
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  justify-content: center;
+}
+
+.transcribation_wrapper{
+  flex: 9;
+  max-height: 90%;
+  overflow: auto;
+  margin: 1.5rem 1.5rem 1rem 1.5rem;
+  border: 1px solid hsla(219, 20%, 25%, 1);
+  border-radius: 10px;
+}
+
+.audiowave_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0 1.5rem 1rem 1.5rem;
+  border: 1px solid hsla(219, 20%, 25%, 1);
+  border-radius: 10px;
+  padding: 1rem;
+}

@@ -1,8 +1,10 @@
 .setup_wrapper{
     position: absolute;
     right:4rem;
+    transition:.8s ease-in-out;
 }
 
 .setup_wrapper:hover{
     cursor: pointer;
+    rotate: 360deg;
 }

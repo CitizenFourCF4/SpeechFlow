@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { formatTime } from 'src/utils/helpers'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectTranscribation, setTranscribation } from 'src/app/store/slices/waveSurferSlice'
+import { selectTranscribation, setTranscriptions } from 'src/app/store/slices/waveSurferSlice'
 import styles from './styles.module.css'
 import { LiaEditSolid } from "react-icons/lia"
 import WavesurferContext from 'src/app/context/WavesurferContext'
@@ -22,11 +22,11 @@ const WhisperTranscribation = () => {
       }
       return msg
     });
-    dispatch(setTranscribation(updatedTranscribation)); 
+    dispatch(setTranscriptions(updatedTranscribation)); 
   };
 
   return (
-    <div >
+    <div className={styles.transcribation_container}>
       {transcribation && transcribation.map((msg, index) => (
         <div key={index} className={`${styles.audio_row} ${((msg.start <= currentTime) & (currentTime < msg.end)) && styles.audio_row_active}`} 
           onClick={() => {seek(msg.start); setSelectedRow(index)}}>

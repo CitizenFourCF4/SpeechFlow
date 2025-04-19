@@ -1,13 +1,18 @@
+.transcribation_container{
+  margin: 1.5rem;
+}
+
 .audio_row{
   display:flex;
   margin-bottom:10px;
   cursor: pointer;
   align-items: center;
+  overflow:scroll;
 }
 
 .audio_row_active{
   background-color: #303f46;
-  padding: .2rem;
+  padding: .3rem;
 }
 
 .formatTime{
