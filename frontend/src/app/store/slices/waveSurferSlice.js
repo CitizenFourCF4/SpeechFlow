@@ -48,7 +48,7 @@ const waveSurferSlice = createSlice({
     },
     closeWhisperModal: (state) => {
       state.isShowOfflineWidget = false
-    }, 
+    },
     addTranscription: (state, action) => {
       state.transcriptions = [...state.transcriptions, action.payload]
     },

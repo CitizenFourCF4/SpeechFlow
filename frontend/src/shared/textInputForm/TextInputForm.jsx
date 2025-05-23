@@ -5,19 +5,28 @@ import { useDispatch, useSelector } from 'react-redux'
 import { sendMessage } from 'src/app/store/slices/chatSlice'
 import { selectTranscribation } from 'src/app/store/slices/waveSurferSlice'
 import { selectIsActiveIncludeTranscriptionToggle } from 'src/app/store/slices/chatSlice';
+import { useLocation } from 'react-router-dom';
+import { selectOnlineTranscription } from 'src/app/store/slices/onlineSlice'
 
 const TextInputForm = () => {
 
   const dispatch = useDispatch()
-  const transcriptions = useSelector(selectTranscribation)
+  const location = useLocation();
+
+  const offlineTranscriptions = useSelector(selectTranscribation)
+  const onlineTranscription = useSelector(selectOnlineTranscription)
   const isIncludeTranscription = useSelector(selectIsActiveIncludeTranscriptionToggle)
+
   
   const [inputMessage, setInputMessage] = useState('')
   const sendTextMessageHandler = (e) => {
+
+    const transcription = location.pathname === '/online' ? onlineTranscription : offlineTranscriptions
+    console.log('transc', transcription)
     e.preventDefault()
     const sendData = {
       message: inputMessage,
-      transcriptions: transcriptions,
+      transcriptions: transcription,
       isIncludeTranscription: isIncludeTranscription
     }
     if (inputMessage){

@@ -4,15 +4,15 @@ from typing import Union, List, Dict
 def reply_to_user(
         user_prompt:str,
         isIncludeTranscription:bool,
-        transcription_chunks:Union[List[str], Dict],
-        model_name='hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest'
+        transcription_chunks:Union[str, Dict],
+        model_name='hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:Q4_K_M'
     )->str:
 
     if isIncludeTranscription: # Подставить в запрос к LLM историю транскрибирования
 
-        if isinstance(transcription_chunks, list): 
+        if isinstance(transcription_chunks, str): 
             try: # TODO поменять логику, сейчас ненадежная обработка случаев offline и online
-                transcription = " ".join(transcription_chunks)
+                transcription = transcription_chunks
             except:
                 transcription = " ".join(elem['text'] for elem in transcription_chunks)            
         else:

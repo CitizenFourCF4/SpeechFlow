@@ -41,7 +41,6 @@ def handle_media_upload():
         200
     )
 
-
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     if os.path.isfile(os.path.join(app.config['MEDIA_FOLDER'], filename)):
@@ -62,6 +61,21 @@ def send_message():
             }), 
         200
     )
+
+@app.route("/send_rag_file", methods=["POST"])
+def send_rag_file():
+    print(request.files)
+    if 'ragFile' not in request.files:
+        return jsonify({'error': 'Нет файла в запросе'}), 400
+    file = request.files['ragFile']
+
+    _, file_extension = os.path.splitext(file.filename)
+    temp_filename = 'temp' + file_extension
+
+    file_path = os.path.join(app.config['MEDIA_FOLDER'], temp_filename)
+    file.save(file_path)
+
+    return jsonify({'message': 'Файл успешно загружен', 'file_path': file_path}), 200
 
 
 if __name__ == '__main__':
